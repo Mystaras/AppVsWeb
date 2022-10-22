@@ -209,7 +209,7 @@ class Experiment(object):
 
     def before_experiment(self, device, *args, **kwargs):
         """Hook executed before the first run of a device in current experiment"""
-        self.scripts.run('before_experiment', device, *args, **kwargs)
+        self.scripts.run('before_experiment', device, self, *args, **kwargs)
 
     def before_run_subject(self, device, path, *args, **kwargs):
         """Hook executed before the first run for a subject"""
@@ -221,10 +221,10 @@ class Experiment(object):
         self.logger.info('Run %s/%s of subject "%s" on %s' % (run, self.repetitions, path, device.name))
         device.shell('logcat -c')
         self.logger.info('Logcat cleared')
-        self.scripts.run('before_run', device, *args, **kwargs)
+        self.scripts.run('before_run', device, self, *args, **kwargs)
 
     def after_launch(self, device, path, run, *args, **kwargs):
-        self.scripts.run('after_launch', device, device.id, device.current_activity(), *args, **kwargs)
+        self.scripts.run('after_launch', device, self, *args, **kwargs)
 
     def start_profiling(self, device, path, run, *args, **kwargs):
         #FIXME: handle *args

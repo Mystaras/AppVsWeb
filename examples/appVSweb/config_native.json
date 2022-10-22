@@ -1,0 +1,33 @@
+{
+  "type": "native",
+  "devices": {
+    "j7duo": {
+    }
+  },
+  "repetitions": 3,
+  "duration": 30000,
+  "monkeyrunner_path": "/usr/bin/monkeyrunner", 
+  "monkey_playback_path": "/usr/lib/android-sdk/tools/swt/monkeyrunner/scripts/monkey_playback.py", 
+  "systrace_path": "/usr/lib/android-sdk/platform-tools/systrace/systrace.py",
+  "powerprofile_path": "/home/pi/.local/share/apktool/framework/framework-res/res/xml/power_profile.xml",
+  "randomization": true,
+  "apps": [
+    "com.google.android.youtube",
+    "com.android.chrome"
+  ],
+  "profilers": {
+    "batterystats": {
+      "cleanup": true,
+      "python2_path": "/home/pi/.pyenv/versions/systrace/bin/python2.7" 
+    }
+  },
+  "scripts": {
+    "before_experiment": "NativeScripts/1_before_experiment.py",
+    "before_run": "NativeScripts/2_before_run.py",
+    "after_launch": "NativeScripts/3_after_launch.py",
+    "before_close": "NativeScripts/5_before_close.py",
+    "after_run": "NativeScripts/6_after_run.py",
+    "after_experiment": "NativeScripts/7_after_experiment.py"
+  },
+  "time_between_run": 120
+}

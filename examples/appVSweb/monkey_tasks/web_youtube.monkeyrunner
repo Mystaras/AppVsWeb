@@ -1,0 +1,11 @@
+TOUCH|{'x':600,'y':180,'type':'downAndUp',}
+WAIT|{'seconds':0.5,}
+TOUCH|{'x':180,'y':180,'type':'downAndUp',}
+WAIT|{'seconds':0.5,}
+TYPE|{'message':'FLYING OVER NORWAY (4K UHD)',}
+WAIT|{'seconds':0.5,}
+TOUCH|{'x':610,'y':180,'type':'downAndUp',}
+WAIT|{'seconds':0.5,}
+TOUCH|{'x':160,'y':400,'type':'downAndUp',}
+WAIT|{'seconds':0.5,}
+TOUCH|{'x':640,'y':560,'type':'downAndUp',}
