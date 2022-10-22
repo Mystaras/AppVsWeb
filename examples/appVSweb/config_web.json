@@ -1,10 +1,10 @@
 {
   "type": "web",
   "devices": {
-    "j7duo": {}
+    "j7duo2": {}
   },
-  "repetitions": 10,
-  "duration": 30000,
+  "repetitions": 5,
+  "duration": 10000,
   "browsers": ["chrome"],
   "monkeyrunner_path": "/usr/bin/monkeyrunner", 
   "monkey_playback_path": "/usr/lib/android-sdk/tools/swt/monkeyrunner/scripts/monkey_playback.py", 
@@ -12,7 +12,9 @@
   "powerprofile_path": "/home/pi/.local/share/apktool/framework/framework-res/res/xml/power_profile.xml",
   "randomization": true,
   "paths": [
-    "https://www.youtube.com/watch?v=IBq2ZGj5sig"
+
+    "https://www.imdb.com"
+
   ],
   "profilers": {
     "batterystats": {
@@ -21,27 +23,23 @@
     }
   },
   "scripts": {
-    "before_experiment": "WebScripts/1_before_experiment.py",
-    "before_run": "WebScripts/2_before_run.py",
+    "before_experiment": "ScriptsWeb/1_before_experiment.py",
+    "before_run": "ScriptsWeb/2_before_run.py",
     "after_launch": [
       {
-        "type": "monkeyrunner",
-        "path": "monkey_tasks/chrome_init.monkeyrunner"
-      },
-      {
         "type": "python3",
-        "path": "WebScripts/3_after_launch.py"
+        "path": "ScriptsWeb/3_after_launch.py"
       }
     ],
     "interaction": [
       {
         "type": "python3",
-        "path": "WebScripts/4_interaction.py"
+        "path": "ScriptsWeb/4_interaction.py"
       }
     ],
-    "before_close": "WebScripts/5_before_close.py",
-    "after_run": "WebScripts/6_after_run.py",
-    "after_experiment": "WebScripts/7_after_experiment.py"
+    "before_close": "ScriptsWeb/5_before_close.py",
+    "after_run": "ScriptsWeb/6_after_run.py",
+    "after_experiment": "ScriptsWeb/7_after_experiment.py"
   },
   "time_between_run": 1000
 }

@@ -1,5 +1,5 @@
 DRAG|{'start':(355,950),'end':(355,400),'duration':1.0,'steps':10,}
 DRAG|{'start':(288,1024),'end':(288,204),'duration':1.0,'steps':10,}
 WAIT|{'seconds':0.5,}
-TOUCH|{'x':360,'y':930,'type':'downAndUp',}
+TOUCH|{'x':160,'y':980,'type':'downAndUp',}
 WAIT|{'seconds':0.5,}

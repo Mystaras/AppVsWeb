@@ -22,12 +22,12 @@
     }
   },
   "scripts": {
-    "before_experiment": "NativeScripts/1_before_experiment.py",
-    "before_run": "NativeScripts/2_before_run.py",
-    "after_launch": "NativeScripts/3_after_launch.py",
-    "before_close": "NativeScripts/5_before_close.py",
-    "after_run": "NativeScripts/6_after_run.py",
-    "after_experiment": "NativeScripts/7_after_experiment.py"
+    "before_experiment": "ScriptsNative/1_before_experiment.py",
+    "before_run": "ScriptsNative/2_before_run.py",
+    "after_launch": "ScriptsNative/3_after_launch.py",
+    "before_close": "ScriptsNative/5_before_close.py",
+    "after_run": "ScriptsNative/6_after_run.py",
+    "after_experiment": "ScriptsNative/7_after_experiment.py"
   },
-  "time_between_run": 120
+  "time_between_run": 2000
 }

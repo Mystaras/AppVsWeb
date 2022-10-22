@@ -224,7 +224,7 @@ class Experiment(object):
         self.scripts.run('before_run', device, self, *args, **kwargs)
 
     def after_launch(self, device, path, run, *args, **kwargs):
-        self.scripts.run('after_launch', device, self, *args, **kwargs)
+        self.scripts.run('after_launch', device, device.id, device.current_activity(), self, *args, **kwargs)
 
     def start_profiling(self, device, path, run, *args, **kwargs):
         #FIXME: handle *args

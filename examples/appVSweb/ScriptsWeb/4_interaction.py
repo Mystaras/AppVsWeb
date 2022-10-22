@@ -1,9 +1,9 @@
-# noinspection PyUnusedLocal,PyUnusedLocal
 import json
 import pathlib
 import os
 import subprocess
 import time
+
 
 path = pathlib.Path(__file__).parent.resolve()
 
@@ -11,23 +11,11 @@ def monkey_runner(script_path: str, descr: str, monker_runner: str = "/usr/bin/m
     print(f"MonkeyRunner: {script_path}: {descr}")
     mr = subprocess.run([monker_runner, monkey_runner_playback , f"{path}/../{script_path}"], check=True, stderr=subprocess.PIPE, stdout=subprocess.PIPE)
 
-
-def main(device, *args, **kwargs):
-    """ Enable for Web Experiments using Chrome
-    # Tap coordinates can be found by enabling 'Pointer location' in Developer options
-    # Accept Chrome policy prompts
-    device.shell('input tap 600 1420')
-    device.shell('input tap 200 1420')
     
-    # Enable permissions for Chrome
-    device.shell('pm grant com.android.chrome android.permission.RECORD_AUDIO')
-    device.shell('pm grant com.android.chrome android.permission.CAMERA')
-    device.shell('pm grant com.android.chrome android.permission.WRITE_EXTERNAL_STORAGE')
-    device.shell('pm grant com.android.chrome android.permission.READ_EXTERNAL_STORAGE')
-    """
-    device.shell("settings put system accelerometer_rotation 0")
-    device.shell("settings put system user_rotation 0")
 
+def main(device, *args, **kwargs) -> None:
+    
+    inter_start = time.time()
     subjects_f = open(f'{path}/data/web_subjects.json', 'r')
     subjects = json.loads(subjects_f.read())
 
@@ -35,10 +23,10 @@ def main(device, *args, **kwargs):
     current_run: Dict = experiment.get_experiment()
     
 
-    for task in subjects[current_run['path']]["after_launch"]:
+    for task in subjects[current_run['path']]["interaction"]:
 
         print(f'Step {task}: ', end='')
-        action, cmd, descr = subjects[current_run['path']]["after_launch"][task]
+        action, cmd, descr = subjects[current_run['path']]["interaction"][task]
 
         if action == 'mkr':
             monkey_runner(cmd, descr)
@@ -54,3 +42,5 @@ def main(device, *args, **kwargs):
 
         else:
             assert(False)
+
+    print("Interaction time", time.time()- inter_start)

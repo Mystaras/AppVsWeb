@@ -64,9 +64,15 @@ class WebExperiment(Experiment):
         kwargs['browser'].start(device)
         time.sleep(5)
 
-    def interaction(self, device, path, run, *args, **kwargs):
+    def after_launch(self, device, path, run, *args, **kwargs):
         kwargs['browser'].load_url(device, path)
         time.sleep(5)
+        super(WebExperiment, self).after_launch(device, path, run, *args, **kwargs)
+
+
+    def interaction(self, device, path, run, *args, **kwargs):
+        # kwargs['browser'].load_url(device, path)
+        # time.sleep(5)
         super(WebExperiment, self).interaction(device, path, run, *args, **kwargs)
         # TODO: Fix web experiments running longer than self.duration
         time.sleep(self.duration)

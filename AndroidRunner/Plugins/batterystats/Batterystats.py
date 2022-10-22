@@ -57,7 +57,7 @@ class Batterystats(Profiler):
         global batterystats_file
         global results_file
         global results_file_name
-
+                
         if self.type == 'native':
             app = kwargs.get('app', None)
         # TODO: add support for other browsers, required form: app = 'package.name'
@@ -108,6 +108,7 @@ class Batterystats(Profiler):
             check=True,
             stderr=subprocess.PIPE
         )
+
         if not ps.stderr == b'':
             raise RuntimeError(ps.stderr)
         if self._errored:

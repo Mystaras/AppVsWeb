@@ -1,0 +1,68 @@
+{
+    "https://www.youtube.com": {
+        "after_launch" : {
+            "1": ["mkr", "./monkey_tasks/web_youtube_init.monkeyrunner", "Manage cookies"],
+            "2" : ["adb", "input tap 600 180", "Click Search"],
+            "3" : ["adb", "input tap 180 180", "Click Search-box"],
+            "4" : ["adb", "input text \"FLYING%sOVER%sNORWAY%s(4K%sUHD)\"", "Input video name"],
+            "5" : ["adb", "input tap 685 180", "Search"],
+            "6" : ["adb", "input tap 160 400", "Click on first video"],
+            "7" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
+            "8" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
+            "9" : ["slp", 5, "Wait on advertisement"],
+            "10" : ["adb", "input tap 1215 680", "Skip Add"],
+            "11" : ["slp", 10, "Wait on advertisement"],
+            "12" : ["adb", "input tap 1090 415", "Wake player"],     
+            "13" : ["adb", "input tap 1215 680", "fullscreen"]
+        },
+        "interaction" : {}        
+    },
+    "https://www.dailymotion.com": {
+        "after_launch" : {
+            "0" : ["slp", 15, "Wait page to load"],
+            "1" : ["adb", "input tap 540 1180", "Accept terms of condition"],
+            "2" : ["adb", "shell input swipe 350 350 350 700", "Make search visible"],
+            "3" : ["adb", "input tap 680 1000", "Dismiss app request"],
+            "4" : ["adb", "input tap 510 170", "Click search"],
+            "6" : ["adb", "input text \"FLYING%sOVER%sNORWAY%s(4K%sUHD)\"", "Input video name"],
+            "7" : ["slp", 5, "Wait search to load"],
+            "8" : ["adb", "input tap 150 470", "Click on video"],
+            "9" : ["slp", 15, "Wait video to load"],
+            "10" : ["adb", "input tap 1830 247", "Skip add"],
+            "11" : ["slp", 4, "Let sleep if no add"],
+            "12" : ["adb", "input tap 500 400", "Wake up"],
+            "13" : ["adb", "input tap 675 585", "Fullscreen"],
+            "14" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
+            "15" : ["adb", "settings put system user_rotation 1", "Landscape mode"]
+        },
+        "interaction" : {}
+    },
+    "https://www.vimeo.com/watch": {
+        "after_launch" : {
+            "0" : ["slp", 5, "Wait page to load"],
+            "1" : ["adb", "input tap 650 185", "Search"],
+            "2" : ["adb", "input tap 250 180", "Search box"],
+            "3" : ["adb", "input text \"FLYING%sOVER%sNORWAY\"", "Input video name"],
+            "4" : ["adb", "input tap 655 1210", "Validate search"],
+            "5" : ["adb", "input tap 130 390", "Click video"],
+            "6" : ["slp", 5, "Wait search to load"],
+            "7" : ["adb", "input tap 520 570", "Fullscreen"],
+            "8" : ["adb", "input tap 82 1215", "Start video"],
+            "9" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
+            "10" : ["adb", "settings put system user_rotation 1", "Landscape mode"]
+        },
+        "interaction" : {}
+    },
+    "https://www.imdb.com": {
+        "after_launch" : {
+            "1" : ["slp", 10, "Wait page to load"],
+            "2" : ["adb", "input tap 240 755", "Click video"],
+            "3" : ["slp", 20, "Wait page load + add"],
+            "4" : ["adb", "input tap 460 435", "Wake up"],
+            "5" : ["adb", "input tap 670 685", "Fullscreen"],
+            "6" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
+            "7" : ["adb", "settings put system user_rotation 1", "Landscape mode"]
+        },
+        "interaction" : {}
+    }
+}
