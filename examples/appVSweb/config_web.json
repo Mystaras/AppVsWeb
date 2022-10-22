@@ -12,8 +12,10 @@
   "powerprofile_path": "/home/pi/.local/share/apktool/framework/framework-res/res/xml/power_profile.xml",
   "randomization": true,
   "paths": [
-
-    "https://www.imdb.com"
+    "https://www.youtube.com",
+    "https://www.dailymotion.com",
+    "https://www.vimeo.com/watch",
+    "https://www.imbd.com"
 
   ],
   "profilers": {

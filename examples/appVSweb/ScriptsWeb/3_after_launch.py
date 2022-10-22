@@ -15,7 +15,7 @@ def monkey_runner(script_path: str, descr: str, monker_runner: str = "/usr/bin/m
 def main(device, *args, **kwargs):
     # Tap coordinates can be found by enabling 'Pointer location' in Developer options
     # Accept Chrome policy prompts
-    device.shell('input tap 355 1050') #once in a while
+    device.shell('input tap 355 1075') #once in a while
     time.sleep(0.5)
     device.shell('input tap 355 1190')
     time.sleep(0.5)
