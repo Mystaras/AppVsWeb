@@ -2,67 +2,219 @@
     "https://www.youtube.com": {
         "after_launch" : {
             "1": ["mkr", "./monkey_tasks/web_youtube_init.monkeyrunner", "Manage cookies"],
-            "2" : ["adb", "input tap 600 180", "Click Search"],
-            "3" : ["adb", "input tap 180 180", "Click Search-box"],
-            "4" : ["adb", "input text \"FLYING%sOVER%sNORWAY%s(4K%sUHD)\"", "Input video name"],
+            "2" : ["adb", "input tap 600 180", "Search"],
+            "3" : ["adb", "input tap 180 180", "Focus search-box"],
+            "4" : ["adb", "input text \"FLYING%sOVER%sNORWAY%s(4K%sUHD)\"", "Search video name"],
             "5" : ["adb", "input tap 685 180", "Search"],
-            "6" : ["adb", "input tap 160 400", "Click on first video"],
+            "6" : ["adb", "input tap 160 400", "Start video"],
             "7" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
             "8" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
             "9" : ["slp", 5, "Wait on advertisement"],
             "10" : ["adb", "input tap 1215 680", "Skip Add"],
             "11" : ["slp", 10, "Wait on advertisement"],
             "12" : ["adb", "input tap 1090 415", "Wake player"],     
-            "13" : ["adb", "input tap 1215 680", "fullscreen"]
+            "13" : ["adb", "input tap 1215 680", "Fullscreen"],
+            "14" : ["slp", 5, "Wait fullscreen"],
+            "15" : ["adb", "input tap 1090 415", "Wake player"],
+            "16" : ["adb", "input tap 1240 45", "Settings"],
+            "17" : ["adb", "input tap 600 235", "Quality"],
+            "18" : ["adb", "input tap 600 320", "360p"],
+            "19" : ["adb", "input tap 840 625", "ok"],
+            "20" : ["slp", 5, "Load quality change"]
+
         },
         "interaction" : {}        
     },
     "https://www.dailymotion.com": {
         "after_launch" : {
-            "0" : ["slp", 15, "Wait page to load"],
-            "1" : ["adb", "input tap 540 1180", "Accept terms of condition"],
-            "2" : ["adb", "shell input swipe 350 350 350 700", "Make search visible"],
+            "1" : ["slp", 10, "Page load"],
+            "2" : ["adb", "input tap 540 1180", "Accept terms of condition"],
             "3" : ["adb", "input tap 680 1000", "Dismiss app request"],
-            "4" : ["adb", "input tap 510 170", "Click search"],
-            "6" : ["adb", "input text \"FLYING%sOVER%sNORWAY%s(4K%sUHD)\"", "Input video name"],
-            "7" : ["slp", 5, "Wait search to load"],
-            "8" : ["adb", "input tap 150 470", "Click on video"],
-            "9" : ["slp", 15, "Wait video to load"],
-            "10" : ["adb", "input tap 1830 247", "Skip add"],
-            "11" : ["slp", 4, "Let sleep if no add"],
-            "12" : ["adb", "input tap 500 400", "Wake up"],
-            "13" : ["adb", "input tap 675 585", "Fullscreen"],
-            "14" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
-            "15" : ["adb", "settings put system user_rotation 1", "Landscape mode"]
+            "4" : ["adb", "input tap 510 170", "Search"],
+            "5" : ["adb", "input text \"FLYING%sOVER%sNORWAY%s(4K%sUHD)\"", "Video name"],
+            "6" : ["slp", 5, "Search load"],
+            "7" : ["adb", "input keyevent 111", "Hide keyboard"],
+            "8" : ["adb", "settings put system accelerometer_rotation 0", "Lock rotation"],
+            "9" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
+            "10" : ["adb", "input tap 220 440", "Start video"],
+            "11" : ["slp", 20, "Wait video to load + add"],
+            "12" : ["adb", "input tap 1000 350", "Wake up"],
+            "13" : ["adb", "input tap 1130 665", "Settings"],
+            "14" : ["adb", "input tap 1060 230", "Quality"],
+            "15" : ["adb", "input tap 1050 405", "360p"],
+            "16" : ["adb", "input tap 1210 147", "Ok"]
         },
         "interaction" : {}
     },
     "https://www.vimeo.com/watch": {
         "after_launch" : {
-            "0" : ["slp", 5, "Wait page to load"],
+            "0" : ["slp", 5, "Page load"],
             "1" : ["adb", "input tap 650 185", "Search"],
-            "2" : ["adb", "input tap 250 180", "Search box"],
-            "3" : ["adb", "input text \"FLYING%sOVER%sNORWAY\"", "Input video name"],
+            "2" : ["adb", "input tap 250 180", "Focus earch box"],
+            "3" : ["adb", "input text \"FLYING%sOVER%sNORWAY\"", "Video name"],
             "4" : ["adb", "input tap 655 1210", "Validate search"],
             "5" : ["adb", "input tap 130 390", "Click video"],
-            "6" : ["slp", 5, "Wait search to load"],
+            "6" : ["slp", 5, "Search to load"],
             "7" : ["adb", "input tap 520 570", "Fullscreen"],
             "8" : ["adb", "input tap 82 1215", "Start video"],
-            "9" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
-            "10" : ["adb", "settings put system user_rotation 1", "Landscape mode"]
+            "9" : ["adb", "settings put system accelerometer_rotation 0", "Lock rotation"],
+            "10" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
+            "11" : ["adb", "input tap 1050 670", "Settings"],
+            "12" : ["adb", "input tap 1100 570", "1080p"],
+            "13" : ["slp", 5, "Load quality"],
+            "14" : ["adb", "input tap 1050 670", "Settings"],
+            "15" : ["adb", "input tap 1100 570", "720p"],
+            "16" : ["slp", 5, "Load quality"],
+            "17" : ["adb", "input tap 1050 670", "Settings"],
+            "18" : ["adb", "input tap 1100 570", "540p"],
+            "19" : ["slp", 5, "Load quality"],
+            "20" : ["adb", "input tap 1050 670", "Settings"],
+            "21" : ["adb", "input tap 1100 570", "360p"],
+            "22" : ["slp", 5, "Ok"]
         },
         "interaction" : {}
+    },
+    "https://www.crunchyroll.com": {
+        "after_launch" : {
+            "1" : ["slp", 10, "Page load"],
+            "2" : ["adb", "input tap 650 300", "Dismiss trial"],
+            "3" : ["adb", "input tap 560 190", "Search"],
+            "4" : ["adb", "input text \"Orient\"", "Video name"],
+            "5" : ["adb", "input tap 655 1255", "Go"],
+            "6" : ["adb", "input tap 165 915", "Click video crunchyroll is slow on web"],
+            "7" : ["slp", 100, "Video load"],
+            "8" : ["adb", "input tap 580 365", "Wake up"],
+            "9" : ["adb", "input tap 675 280", "Fullsecreem"],
+
+            "10" : ["adb", "input tap 605 35", "Settings"],
+            "11" : ["adb", "input tap 550 330", "Quality"],
+            "12" : ["adb", "input tap 50 480", "360p"],
+            "13" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
+            "14" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
+            "15" : ["slp", 10, "Video load"]
+        },
+        "interaction" : {}
+    },
+    "https://sp.nicovideo.jp" : {
+        "after_launch" : {
+            "1" : ["slp", 10, "Page load"],
+            "2" : ["adb", "input tap 40 180", "Movies"],
+            "3" : ["adb", "input tap 235 335", "movie"],
+            "4" : ["adb", "input tap 600 180", "Search"],
+            "5" : ["adb", "input tap 350 245", "Focus search"],
+            "6" : ["adb", "input text \"Orient\"", "Video name"],
+            "7" : ["adb", "input tap 655 1210", "Go"],
+            "8" : ["slp", 5, "Page load"],
+            "9" : ["adb", "input tap 140 740", "Click video"],
+            "10" : ["slp", 10, "Page load"],
+            "11" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
+            "12" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
+            "13" : ["adb", "input tap 640 360", "Click video"],
+            "14" : ["slp", 30, "Video load + adds"]
+        },
+        "interaction" : {}
+
     },
     "https://www.imdb.com": {
         "after_launch" : {
             "1" : ["slp", 10, "Wait page to load"],
-            "2" : ["adb", "input tap 240 755", "Click video"],
-            "3" : ["slp", 20, "Wait page load + add"],
-            "4" : ["adb", "input tap 460 435", "Wake up"],
-            "5" : ["adb", "input tap 670 685", "Fullscreen"],
-            "6" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
-            "7" : ["adb", "settings put system user_rotation 1", "Landscape mode"]
+            "2" : ["adb", "input tap 425 185", "Search"],
+            "3" : ["adb", "input text \"Avengers: Endgame\"", "Video name"],
+            "4" : ["adb", "input tap 570 310", "Validate search"],
+            "6" : ["adb", "input tap 150 500", "Click video"],
+            "7" : ["slp", 5, "Wait page load"],
+            "9" : ["adb", "input tap 370 975", "Start video"],
+            "10" : ["slp", 20, "Skip add"],
+            "11" : ["adb", "input tap 460 435", "Wake up"],
+            "12" : ["adb", "input tap 665 685", "Fullscreen"],
+            "13" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
+            "14" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
+            "15" : ["slp", 3, "Ready"]
+        },
+        "interaction" : {}
+    },
+    
+    "https://www.twitch.tv":{
+        "after_launch" : {
+            "1" : ["slp", 15, "Page load"],
+            "2" : ["adb", "input tap 375 920", "Close privacy"],
+            "3" : ["adb", "input tap 600 185", "Search"],
+            "4" : ["adb", "input text \"shroud\"", "Channel name"],
+            "5" : ["adb", "input tap 655 1210", "Go"],
+            "6" : ["adb", "input tap 100 440", "Select account"],
+            "7" : ["adb", "input tap 400 620", "Videos (skip pop up)"],
+            "8" : ["slp", 5, "Page load"],
+            "9" : ["adb", "input tap 400 620", "Videos"],
+            "10" : ["adb", "input tap 455 855", "Click video"],
+            "11" : ["slp", 5, "Load video"],
+            "12" : ["adb", "input tap 550 340", "Wake up"],
+            "13" : ["adb", "input tap 310 590", "Skip intro"],
+            "14" : ["adb", "input tap 595 545", "Full screen"],
+            "15" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
+            "16" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
+            "17" : ["slp", 5, "Ready"]
+        },
+        "interaction" : {}
+
+    },
+    "https://www.facebook.com":{
+        "after_launch" : {
+            "1": ["adb", "am start -n com.android.chrome/com.google.android.apps.chrome.Main -d \"https://www.facebook.com/watch/?ref=search&v=156943983172331&external_log_id=15461e45-4759-4097-b1af-537fe8a64388&q=guga%20foods\"", "video"],
+            "2" : ["slp", 5, "Page load"],
+            "3" : ["adb", "input tap 455 1145", "Privacy"],
+            "4" : ["slp", 5, "Page load"],
+            "5" : ["adb", "input tap 370 885", "Start video"],
+            "6" : ["slp", 5, "Video load"],
+            "7" : ["adb", "input tap 555 685", "Wake up"],
+            "8" : ["adb", "input tap 620 1265", "Fullscreen"]
+        },
+        "interaction" : {}
+    },
+    "https://www.ted.com": {
+        "after_launch" : {
+            "1" : ["slp", 15, "Page load"],
+            "2" : ["adb", "input tap 375 1215", "Privacy Accept"],
+            "3" : ["slp", 5, "Page load"],
+            "4" : ["adb", "input tap 60 190", "Options"],
+            "5" : ["adb", "input tap 255 330", "Search"],
+            "6" : ["adb", "input text \"Eco-friendly%sdrywall\"", "Video Name"],
+            "7" : ["adb", "input tap 655 1255", "Go"],
+            "8" : ["slp", 5, "Page load"],
+            "9" : ["adb", "input tap 150 650", "Click video"],
+            "10" : ["adb", "input tap 540 1035", "Chrome"],
+            "11" : ["slp", 5, "Page load"],
+            "12" : ["adb", "input tap 660 445", "Play video"],
+            "13" : ["slp", 20, "Adds"],
+            "14" : ["adb", "input tap 535 350", "Wake up"],
+            "15" : ["adb", "input tap 560 518", "Fullscreen"],
+            "16" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
+            "17" : ["adb", "settings put system user_rotation 1", "Landscape mode"]
+
+        },
+        "interaction" : {}
+    },
+    "https://www.plex.tv": {
+        "after_launch" : {
+            "1" : ["slp", 10, "Page load"],
+            "2" : ["adb", "input tap 375 840", "Privacy Accept"],
+            "3" : ["adb", "input tap 375 370", "Search"],
+            "4" : ["adb", "input text \"Banking on bitcoin\"", "Video Name"],
+            "5" : ["slp", 3, "Search load"],
+            "6" : ["adb", "input tap 375 460", "Select video"],
+            "7" : ["slp", 5, "Page load "],
+            "8" : ["adb", "input tap 375 1020", "Watch now"],
+            "11" : ["adb", "input tap 375 570", "Stay in browser"],
+            "12" : ["slp", 15, "Privacy pop-up"],
+            "13" : ["adb", "input tap 370 1225", "Close app request"],
+            "14" : ["adb", "input tap 475 1245", "I do not agree"],
+            "15" : ["slp", 10, "Video load"],
+            "16" : ["adb", "input tap 540 570", "Wake up"],
+            "17" : ["adb", "input tap 645 1215", "Fullscreen"],
+            "18" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
+            "19" : ["adb", "settings put system user_rotation 1", "Landscape mode"]
         },
         "interaction" : {}
     }
+
+
 }

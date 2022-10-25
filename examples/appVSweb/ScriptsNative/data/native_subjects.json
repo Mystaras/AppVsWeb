@@ -1,0 +1,77 @@
+{
+    "com.google.android.youtube": {
+        "after_launch" : {
+            "0": ["slp", 5, "Load"],
+            "1": ["adb", "input tap 585 85", "Search"],
+            "2" : ["adb", "input text \"FLYING%sOVER%sNORWAY%s(4K%sUHD)\"", "Type video name"],
+            "3": ["adb", "input tap 655 1210", "Validate"],
+            "4": ["slp", 5, "Load"],
+            "5": ["adb", "input tap 350 1000", "Star video"],
+            "6": ["slp", 3, "Load"],
+            "7": ["adb", "input tap 630 350", "Skip add"],
+            "8": ["slp", 3, "Load"],
+            "9": ["adb", "input tap 630 350", "Skip add"],
+            "10": ["slp", 30, "Adds"],
+            "11" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
+            "12" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
+            "13" : ["adb", "input tap 620 170", "Wake up"],
+            "14" : ["adb", "input tap 670 405", "Fullscreen"],
+            "15": ["slp", 3, "Load"],
+            "16" : ["adb", "input tap 1000 200", "Wake up"],
+            "17" : ["adb", "input tap 1240 45", "Settings"],
+            "18" : ["adb", "input tap 660 100", "Quality"],
+            "19" : ["adb", "input tap 660 535", "Advanced"],
+            "20" : ["adb", "input tap 660 335", "720p"],
+            "21": ["slp", 3, "Load"]
+        },
+        "interaction" : {} 
+    },
+
+    "com.dailymotion.dailymotion" : {
+        "after_launch" : {
+            "0": ["slp", 5, "Load"],
+            "1": ["adb", "input tap 230 670", "None of the above"],
+            "2": ["slp", 3, "Load"],
+            "3": ["adb", "input tap 355 1185", "Accept preference"],
+            "4": ["adb", "input tap 650 143", "Close login"],
+            "5": ["adb", "input tap 450 1235", "Search"],
+            "6" : ["adb", "input text \"FLYING%sOVER%sNORWAY%s(4K%sUHD)\"", "Video name"],
+            "7": ["slp", 3, "Load"],
+            "8": ["adb", "input tap 200 475", "Search"],
+            "9" : ["adb", "settings put system accelerometer_rotation 0", "Lock rotation"],
+            "10" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
+            "11": ["adb", "input tap 100 200", "Wake up"],
+            "12": ["adb", "input tap 1215 60", "Settings"],
+            "13": ["adb", "input tap 1150 285", "Quality"],
+            "14": ["adb", "input tap 1150 200", "720p"],
+            "15": ["adb", "input tap 1215 55", "Exit settings"]   
+        },
+        "interaction" : {}
+    },
+
+    "com.vimeo.android.videoapp" : {
+        "after_launch" : {
+            "0": ["slp", 5, "Load"],
+            "1": ["adb", "input tap 230 670", "None of the above"],
+            "2": ["slp", 3, "Load"],
+            "3": ["adb", "input tap 355 1185", "Accept preference"],
+            "4": ["adb", "input tap 650 143", "Close login"],
+            "5": ["adb", "input tap 450 1235", "Search"],
+            "6" : ["adb", "input text \"FLYING%sOVER%sNORWAY%s(4K%sUHD)\"", "Video name"],
+            "7": ["slp", 3, "Load"],
+            "8": ["adb", "input tap 200 475", "Search"],
+            "9" : ["adb", "settings put system accelerometer_rotation 0", "Lock rotation"],
+            "10" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
+            "11": ["adb", "input tap 100 200", "Wake up"],
+            "12": ["adb", "input tap 1215 60", "Settings"],
+            "13": ["adb", "input tap 1150 285", "Quality"],
+            "14": ["adb", "input tap 1150 200", "720p"],
+            "15": ["adb", "input tap 1215 55", "Exit settings"]   
+        },
+        "interaction" : {}
+    },
+    "jp.nicovideo.android" : {
+        "after_launch" : {},
+        "interaction" : {}
+    }
+}
