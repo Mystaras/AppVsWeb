@@ -39,6 +39,8 @@ class NativeExperiment(Experiment):
     def before_run(self, device, path, run, *args, **kwargs):
         super(NativeExperiment, self).before_run(device, path, run)
         device.configure_settings_device(self.package, enable=True)
+        if self.clear_cache == True:
+            device.clear_app_data(self.package)
         device.launch_package(self.package)
         time.sleep(1)
         self.after_launch(device, path, run)

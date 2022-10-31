@@ -1,9 +1,10 @@
 {
     "com.google.android.youtube": {
+        "to_install": false,
         "after_launch" : {
             "0": ["slp", 5, "Load"],
             "1": ["adb", "input tap 585 85", "Search"],
-            "2" : ["adb", "input text \"FLYING%sOVER%sNORWAY%s(4K%sUHD)\"", "Type video name"],
+            "2": ["adb", "input text \"FLYING%sOVER%sNORWAY%s(4K%sUHD)\"", "Type video name"],
             "3": ["adb", "input tap 655 1210", "Validate"],
             "4": ["slp", 5, "Load"],
             "5": ["adb", "input tap 350 1000", "Star video"],
@@ -12,22 +13,22 @@
             "8": ["slp", 3, "Load"],
             "9": ["adb", "input tap 630 350", "Skip add"],
             "10": ["slp", 30, "Adds"],
-            "11" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
-            "12" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
-            "13" : ["adb", "input tap 620 170", "Wake up"],
-            "14" : ["adb", "input tap 670 405", "Fullscreen"],
+            "11": ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
+            "12": ["adb", "settings put system user_rotation 1", "Landscape mode"],
+            "13": ["adb", "input tap 620 170", "Wake up"],
+            "14": ["adb", "input tap 670 405", "Fullscreen"],
             "15": ["slp", 3, "Load"],
-            "16" : ["adb", "input tap 1000 200", "Wake up"],
-            "17" : ["adb", "input tap 1240 45", "Settings"],
-            "18" : ["adb", "input tap 660 100", "Quality"],
-            "19" : ["adb", "input tap 660 535", "Advanced"],
-            "20" : ["adb", "input tap 660 335", "720p"],
-            "21": ["slp", 3, "Load"]
+            "16": ["adb", "input tap 1000 200", "Wake up"],
+            "17": ["adb", "input tap 1240 45", "Settings"],
+            "18": ["adb", "input tap 660 100", "Quality"],
+            "19": ["adb", "input tap 660 535", "Advanced"],
+            "20": ["adb", "input tap 660 495", "360p"]
         },
         "interaction" : {} 
     },
 
     "com.dailymotion.dailymotion" : {
+        "to_install": true,
         "after_launch" : {
             "0": ["slp", 5, "Load"],
             "1": ["adb", "input tap 230 670", "None of the above"],
@@ -35,43 +36,206 @@
             "3": ["adb", "input tap 355 1185", "Accept preference"],
             "4": ["adb", "input tap 650 143", "Close login"],
             "5": ["adb", "input tap 450 1235", "Search"],
-            "6" : ["adb", "input text \"FLYING%sOVER%sNORWAY%s(4K%sUHD)\"", "Video name"],
+            "6": ["adb", "input text \"FLYING%sOVER%sNORWAY%s(4K%sUHD)\"", "Video name"],
             "7": ["slp", 3, "Load"],
             "8": ["adb", "input tap 200 475", "Search"],
-            "9" : ["adb", "settings put system accelerometer_rotation 0", "Lock rotation"],
-            "10" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
-            "11": ["adb", "input tap 100 200", "Wake up"],
-            "12": ["adb", "input tap 1215 60", "Settings"],
-            "13": ["adb", "input tap 1150 285", "Quality"],
-            "14": ["adb", "input tap 1150 200", "720p"],
-            "15": ["adb", "input tap 1215 55", "Exit settings"]   
+            "9": ["adb", "settings put system accelerometer_rotation 0", "Lock rotation"],
+            "10": ["adb", "settings put system user_rotation 1", "Landscape mode"],
+            "11": ["slp", 40, "Adds"],
+            "12": ["adb", "input tap 100 200", "Wake up"],
+            "13": ["adb", "input tap 1215 60", "Settings"],
+            "14": ["adb", "input tap 1150 285", "Quality"],
+            "15": ["adb", "input tap 1150 550", "350p"],
+            "16": ["adb", "input tap 1215 55", "Exit settings"]   
         },
         "interaction" : {}
     },
 
     "com.vimeo.android.videoapp" : {
+        "to_install": true,
         "after_launch" : {
             "0": ["slp", 5, "Load"],
-            "1": ["adb", "input tap 230 670", "None of the above"],
-            "2": ["slp", 3, "Load"],
-            "3": ["adb", "input tap 355 1185", "Accept preference"],
-            "4": ["adb", "input tap 650 143", "Close login"],
-            "5": ["adb", "input tap 450 1235", "Search"],
-            "6" : ["adb", "input text \"FLYING%sOVER%sNORWAY%s(4K%sUHD)\"", "Video name"],
-            "7": ["slp", 3, "Load"],
-            "8": ["adb", "input tap 200 475", "Search"],
-            "9" : ["adb", "settings put system accelerometer_rotation 0", "Lock rotation"],
-            "10" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
-            "11": ["adb", "input tap 100 200", "Wake up"],
-            "12": ["adb", "input tap 1215 60", "Settings"],
-            "13": ["adb", "input tap 1150 285", "Quality"],
-            "14": ["adb", "input tap 1150 200", "720p"],
-            "15": ["adb", "input tap 1215 55", "Exit settings"]   
+            "1": ["adb", "input tap 660 45", "Skip"],
+            "2": ["slp", 5, "Load"],
+            "3": ["adb", "input tap 595 90", "Search"],
+            "4": ["adb", "input tap 370 92", "Focus search"],
+            "5": ["adb", "input text \"FLYING%sOVER%sNORWAY%s(4K%sUHD)\"", "Video name"],
+            "6": ["adb", "input tap 655 1255", "Go"],
+            "7": ["slp", 15, "Load"],
+            "8": ["adb", "input tap 150 400", "Search"],
+            "9": ["adb", "settings put system accelerometer_rotation 0", "Lock rotation"],
+            "10": ["adb", "settings put system user_rotation 1", "Landscape mode"],
+            "11": ["slp", 5, "Load"],
+            "12": ["adb", "input tap 100 200", "Wake up"],
+            "13": ["adb", "input tap 1250 50", "Options"],
+            "14": ["adb", "input tap 370 570", "Quality"],
+            "15": ["adb", "input tap 370 580", "360p"]
+        },
+        "interaction" : {}
+    },
+    "com.crunchyroll.crunchyroid" : {
+        "to_install": true,
+        "after_launch" : {
+            "0": ["slp", 10, "Load"],
+            "1": ["adb", "input tap 660 100", "Close add"],
+            "2": ["adb", "input tap 375 1125", "Log in"],
+            "3": ["adb", "input text \"TODO:\"", "email"],
+            "4": ["adb", "input tap 655 1255", "Next"],
+            "5": ["adb", "input text \"TODO:\"", "password"],
+            "6": ["adb", "input tap 655 1255", "Go"],
+            "7": ["slp", 10, "Load"],
+            "8": ["adb", "input tap 51 80", "Return to home just in case"],
+            "9": ["adb", "input tap 675 90", "Go"],
+            "10": ["adb", "input text \"Orient\"", "video name"],
+            "11": ["adb", "input tap 655 1255", "Done"],
+            "12": ["slp", 5, "Load"],
+            "13": ["adb", "input tap 165 735", "Click video"],
+            "14": ["slp", 10, "Load"],
+            "15": ["adb", "settings put system accelerometer_rotation 0", "Lock rotation"],
+            "16": ["adb", "settings put system user_rotation 1", "Landscape mode"],
+            "17": ["slp", 30, "Add"],
+            "18": ["adb", "input tap 975 205", "Wake up"],
+            "19": ["adb", "input tap 1150 40", "Settings"],
+            "20": ["adb", "input tap 1150 350", "Quality"],
+            "21": ["adb", "input tap 45 515", "360p"]
         },
         "interaction" : {}
     },
     "jp.nicovideo.android" : {
-        "after_launch" : {},
+        "to_install": true,
+        "after_launch" : {
+            "0": ["slp", 10, "Load"],
+            "1": ["adb", "input tap 375 715", "Start as guest"],
+            "2": ["slp", 10, "Load"],
+            "3": ["adb", "input tap 595 100", "Dismiss add"],
+            "4": ["adb", "input tap 360 1225", "Seacrh"],
+            "5": ["adb", "input tap 360 90", "Focus seacrh"],
+            "6": ["adb", "input text \"Orient express\"", "video name"],
+            "7": ["adb", "input tap 655 1255", "Go"],
+            "8": ["slp", 5, "Load"],
+            "9": ["adb", "input tap 20 510", "Click video"],
+            "10": ["slp", 10, "Load"],
+            "11": ["adb", "settings put system accelerometer_rotation 0", "Lock rotation"],
+            "12": ["adb", "settings put system user_rotation 1", "Landscape mode"],
+            "13": ["slp", 10, "Skip add"]
+        },
+        "interaction" : {}
+    },
+    "com.imdb.mobile" : {
+        "to_install": true,
+        "after_launch" : {
+            "0" : ["slp", 10, "Load"],
+            "1" : ["adb", "input tap 365 1050", "Not now"],
+            "2" : ["adb", "input tap 260 1230", "Search"],
+            "3" : ["adb", "input tap 365 95", "Focus search"],
+            "4" : ["adb", "input text \"Avengers: Endgame\"", "Video name"],
+            "5" : ["adb", "input tap 655 1255", "Go"],
+            "6" : ["slp", 5, "Load"],
+            "7" : ["adb", "input tap 320 225", "Click video"],
+            "8" : ["slp", 20, "Load"],
+            "9" : ["adb", "input tap 552 545", "Wake up"],
+            "10" : ["adb", "input tap 670 670", "Fullscreen"],
+            "11" : ["slp", 10, "Load"],
+            "12" : ["adb", "settings put system accelerometer_rotation 0", "Lock rotation"],
+            "13" : ["adb", "settings put system user_rotation 1", "Landscape mode"]
+
+        },
+        "interaction" : {}
+    },
+    "com.plexapp.android" : {
+        "to_install": true,
+        "after_launch" : {
+            "0" : ["slp", 10, "Load"],
+            "1" : ["adb", "input tap 365 1050", "Not now"],
+            "2" : ["adb", "input tap 370 1035", "Skip"],
+            "3" : ["adb", "input tap 610 90", "Search"],
+            "4" : ["adb", "input tap 379 90", "Focus search"],
+            "5" : ["adb", "input text \"Banking on bitcoin\"", "Video Name"],
+            "6" : ["slp", 5, "Load"],
+            "7" : ["adb", "input tap 370 258", "Click video"],
+            "8" : ["slp", 5, "Load"],
+            "9" : ["adb", "input tap 150 690", "Play"],
+            "10" : ["adb", "input tap 370 1180", "I do not agree"],
+            "11" : ["slp", 30, "Video Load+Add"],
+            "12" : ["adb", "settings put system accelerometer_rotation 0", "Lock rotation"],
+            "13" : ["adb", "settings put system user_rotation 1", "Landscape mode"]
+        },
+        "interaction" : {}
+    },
+    "com.ted.android" : {
+        "to_install": true,
+        "after_launch" : {
+            "0" : ["slp", 10, "Load"],
+            "1" : ["adb", "input tap 365 740", "Let's go!"],
+            "2" : ["adb", "input tap 220 275", "Thechnology"],
+            "4" : ["adb", "input tap 530 275", "Science"],
+            "5" : ["adb", "input tap 530 595", "The environment"],
+            "6" : ["adb", "input tap 365 1225", "Next"],
+            "7" : ["adb", "input tap 365 870", "A sense of hope"],
+            "8" : ["adb", "input tap 365 1225", "Next"],
+            "9" : ["adb", "input tap 365 1230", "Skip for now"],
+            "10" : ["slp", 10, "Load"],
+            "11" : ["adb", "input tap 450 1235", "Search"],
+            "12" : ["adb", "input tap 365 100", "Focus search"],
+            "13" : ["adb", "input text \"Eco-friendly\"", "Video Name"],
+            "14" : ["adb", "input tap 655 1255", "Go"],
+            "15" : ["slp", 15, "Load"],
+            "16" : ["adb", "input tap 365 190", "Click video name"],
+            "17" : ["adb", "input tap 365 190", "Click video"],
+            "18" : ["adb", "input tap 360 340", "Start video"],
+            "19" : ["slp", 25, "Load+Adds"],
+            "20" : ["adb", "input tap 530 565", "Wake"],
+            "21" : ["adb", "input tap 670 190", "Fullscreen"],
+            "22" : ["adb", "settings put system accelerometer_rotation 0", "Lock rotation"],
+            "23" : ["adb", "settings put system user_rotation 1", "Landscape mode"]
+        },
+        "interaction" : {}
+    },
+    "tv.twitch.android.app" : {
+        "to_install": true,
+        "after_launch" : {
+            "0" : ["slp", 10, "Load"],
+            "1" : ["adb", "input tap 200 1220", "Loggin"],
+            "2" : ["slp", 3, "Load"],
+            "3" : ["adb", "input text \"TODO:\"", "Username"],
+            "4" : ["adb", "input tap 655 1255", "Next"],
+            "5" : ["adb", "input text \"3TODO:\"", "password"],
+            "6" : ["bell"],
+            "7" : ["adb", "input tap 370 870", "Continue"],
+            "8" : ["adb", "input tap 370 825", "Accept Cookies"],
+            "9" : ["adb", "input tap 610 1230", "Search"],
+            "10" : ["adb", "input tap 370 90", "Focus search"]
+
+
+        },
+        "interaction" : {}
+    },
+    "com.nextradiotv.bfmtvandroid" : {
+        "to_install": true,
+        "after_launch" : {
+            "0" : ["slp", 10, "Load"],
+            "1" : ["adb", "input tap 350 1130", "Accept"],
+            "2" : ["slp", 5, "Load"],
+            "3" : ["adb", "input tap 650 1225", "Menu"],
+            "4" : ["adb", "input tap 350 535", "Video"],
+            "5" : ["slp", 3, "Load"],
+            "6" : ["adb", "input tap 350 700", "Click first"],
+            "7" : ["adb", "settings put system accelerometer_rotation 0", "Lock rotation"],
+            "8" : ["adb", "settings put system user_rotation 1", "Landscape mode"]
+        },
+        "interaction" : {}
+    },
+    "nl.nos.app" : {
+        "to_install": true,
+        "after_launch" : {
+            "0" : ["slp", 10, "Load"],
+            "1" : ["adb", "input tap 645 300", "Dismiss notification request"],
+            "2" : ["adb", "input tap 506 1230", "Videos"],
+            "3" : ["adb", "iput tap 370 185", "Sport"],
+            "4" : ["adb", "input tap 350 240", "First video"],
+            "5" : ["adb", "settings put system accelerometer_rotation 0", "Lock rotation"],
+            "6" : ["adb", "settings put system user_rotation 1", "Landscape mode"]
+        },
         "interaction" : {}
     }
 }

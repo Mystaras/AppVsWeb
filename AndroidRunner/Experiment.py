@@ -131,6 +131,7 @@ class Experiment(object):
         a.join()
 
     def check_result_files(self, correct_file_list):
+        # return
         result_data_path = op.join(paths.BASE_OUTPUT_DIR, 'data')
         current_file_structure = walk(result_data_path)
         current_file_list = self.walk_to_list(current_file_structure)
@@ -224,7 +225,7 @@ class Experiment(object):
         self.scripts.run('before_run', device, self, *args, **kwargs)
 
     def after_launch(self, device, path, run, *args, **kwargs):
-        self.scripts.run('after_launch', device, device.id, device.current_activity(), self, *args, **kwargs)
+        self.scripts.run('after_launch', device, device.id, device.current_activity(), self, path, *args, **kwargs)
 
     def start_profiling(self, device, path, run, *args, **kwargs):
         #FIXME: handle *args
@@ -243,7 +244,7 @@ class Experiment(object):
 
     def after_run(self, device, path, run, *args, **kwargs):
         """Hook executed after a run"""
-        self.scripts.run('after_run', device, *args, **kwargs)
+        self.scripts.run('after_run', device, self, *args, **kwargs)
         self.profilers.collect_results(device)
         Adb.reset(self.reset_adb_among_runs)
         self.logger.info('Sleeping for %s milliseconds' % self.time_between_run)
@@ -256,7 +257,7 @@ class Experiment(object):
     def after_experiment(self, device, *args, **kwargs):
         """Hook executed after the last run for device of experiment"""
         self.logger.info('Experiment completed, start cleanup')
-        self.scripts.run('after_experiment', device, *args, **kwargs)
+        self.scripts.run('after_experiment', device, self, *args, **kwargs)
 
     def aggregate_subject(self):
         self.profilers.aggregate_subject()

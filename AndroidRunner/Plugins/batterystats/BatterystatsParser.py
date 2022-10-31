@@ -440,8 +440,15 @@ def parse_systrace(app, systrace_file, logcat, batterystats, power_profile, core
 
 def parse_logcat(app, logcat_file, device_api_version):
     """ Obtain app start and end times from logcat """
-    with open(logcat_file, 'r') as f:
-        logcat = f.read()
+    with open(logcat_file, 'rb') as f:
+        lines = f.readlines()
+        lines_ascii = []
+        for l in lines:
+            try:
+                lines_ascii.append(l.decode('ascii'))
+            except UnicodeDecodeError:
+                pass
+        logcat = ''.join(lines_ascii)
         """
         Starting from Android API SDK-29 (Android 10) instead of ActivityManager ActivityTaskManager 
         is responsible for starting activities. So we need to apply the right regex

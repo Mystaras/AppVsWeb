@@ -1,19 +1,28 @@
 {
   "type": "native",
   "devices": {
-    "j7duo": {
+    "j7duo2": {
     }
   },
-  "repetitions": 3,
+  "repetitions": 5,
   "duration": 30000,
   "monkeyrunner_path": "/usr/bin/monkeyrunner", 
   "monkey_playback_path": "/usr/lib/android-sdk/tools/swt/monkeyrunner/scripts/monkey_playback.py", 
   "systrace_path": "/usr/lib/android-sdk/platform-tools/systrace/systrace.py",
   "powerprofile_path": "/home/pi/.local/share/apktool/framework/framework-res/res/xml/power_profile.xml",
   "randomization": true,
+  "clear_cache":true,
   "apps": [
     "com.google.android.youtube",
-    "com.android.chrome"
+    "com.vimeo.android.videoapp",
+    "com.dailymotion.dailymotion",
+    "com.crunchyroll.crunchyroid",
+    "jp.nicovideo.android",
+    "com.imdb.mobile",
+    "com.plexapp.android",
+    "com.ted.android",
+    "com.nextradiotv.bfmtvandroid",
+    "nl.nos.app"
   ],
   "profilers": {
     "batterystats": {
@@ -29,5 +38,5 @@
     "after_run": "ScriptsNative/6_after_run.py",
     "after_experiment": "ScriptsNative/7_after_experiment.py"
   },
-  "time_between_run": 2000
+  "time_between_run": 120000
 }

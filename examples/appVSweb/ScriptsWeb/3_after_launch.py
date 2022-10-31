@@ -13,6 +13,9 @@ def monkey_runner(script_path: str, descr: str, monker_runner: str = "/usr/bin/m
 
 
 def main(device, *args, **kwargs):
+    device.shell("settings put system accelerometer_rotation 0")
+    device.shell("settings put system user_rotation 0")
+    
     # Tap coordinates can be found by enabling 'Pointer location' in Developer options
     # Accept Chrome policy prompts
     device.shell('input tap 355 1075') #once in a while
@@ -28,20 +31,18 @@ def main(device, *args, **kwargs):
     # device.shell('pm grant com.android.chrome android.permission.WRITE_EXTERNAL_STORAGE')
     # device.shell('pm grant com.android.chrome android.permission.READ_EXTERNAL_STORAGE')
 
-    device.shell("settings put system accelerometer_rotation 0")
-    device.shell("settings put system user_rotation 0")
+    
 
     subjects_f = open(f'{path}/data/web_subjects.json', 'r')
     subjects = json.loads(subjects_f.read())
 
-    experiment = args[2] # can be useful if you want to differentiate actions per subject
-    current_run: Dict = experiment.get_experiment()
+    current_run = args[3] # can be useful if you want to differentiate actions per subject
     
 
-    for task in subjects[current_run['path']]["after_launch"]:
+    for task in subjects[current_run]["after_launch"]:
 
         print(f'Step {task}: ', end='')
-        action, cmd, descr = subjects[current_run['path']]["after_launch"][task]
+        action, cmd, descr = subjects[current_run]["after_launch"][task]
 
         if action == 'mkr':
             monkey_runner(cmd, descr)

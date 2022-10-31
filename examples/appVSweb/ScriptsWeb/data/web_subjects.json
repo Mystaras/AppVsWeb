@@ -37,7 +37,7 @@
             "8" : ["adb", "settings put system accelerometer_rotation 0", "Lock rotation"],
             "9" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
             "10" : ["adb", "input tap 220 440", "Start video"],
-            "11" : ["slp", 20, "Wait video to load + add"],
+            "11" : ["slp", 50, "Wait video to load + add"],
             "12" : ["adb", "input tap 1000 350", "Wake up"],
             "13" : ["adb", "input tap 1130 665", "Settings"],
             "14" : ["adb", "input tap 1060 230", "Quality"],
@@ -53,24 +53,24 @@
             "2" : ["adb", "input tap 250 180", "Focus earch box"],
             "3" : ["adb", "input text \"FLYING%sOVER%sNORWAY\"", "Video name"],
             "4" : ["adb", "input tap 655 1210", "Validate search"],
-            "5" : ["adb", "input tap 130 390", "Click video"],
-            "6" : ["slp", 5, "Search to load"],
-            "7" : ["adb", "input tap 520 570", "Fullscreen"],
-            "8" : ["adb", "input tap 82 1215", "Start video"],
-            "9" : ["adb", "settings put system accelerometer_rotation 0", "Lock rotation"],
-            "10" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
-            "11" : ["adb", "input tap 1050 670", "Settings"],
-            "12" : ["adb", "input tap 1100 570", "1080p"],
-            "13" : ["slp", 5, "Load quality"],
-            "14" : ["adb", "input tap 1050 670", "Settings"],
-            "15" : ["adb", "input tap 1100 570", "720p"],
-            "16" : ["slp", 5, "Load quality"],
-            "17" : ["adb", "input tap 1050 670", "Settings"],
-            "18" : ["adb", "input tap 1100 570", "540p"],
-            "19" : ["slp", 5, "Load quality"],
-            "20" : ["adb", "input tap 1050 670", "Settings"],
-            "21" : ["adb", "input tap 1100 570", "360p"],
-            "22" : ["slp", 5, "Ok"]
+            "5" : ["slp", 5, "Load"],
+            "6" : ["adb", "input tap 130 390", "Click video"],
+            "7" : ["slp", 5, "Search to load"],
+            "8" : ["adb", "input tap 520 570", "Fullscreen"],
+            "9" : ["adb", "input tap 82 1215", "Start video"],
+            "10" : ["adb", "settings put system accelerometer_rotation 0", "Lock rotation"],
+            "11" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
+            "12" : ["adb", "input tap 1050 670", "Settings"],
+            "13" : ["adb", "input tap 1100 570", "1080p"],
+            "14" : ["slp", 5, "Load quality"],
+            "15" : ["adb", "input tap 1050 670", "Settings"],
+            "16" : ["adb", "input tap 1100 570", "720p"],
+            "17" : ["slp", 5, "Load quality"],
+            "18" : ["adb", "input tap 1050 670", "Settings"],
+            "19" : ["adb", "input tap 1100 570", "540p"],
+            "20" : ["slp", 5, "Load quality"],
+            "21" : ["adb", "input tap 1050 670", "Settings"],
+            "22" : ["adb", "input tap 1100 570", "360p"]
         },
         "interaction" : {}
     },
@@ -90,8 +90,7 @@
             "11" : ["adb", "input tap 550 330", "Quality"],
             "12" : ["adb", "input tap 50 480", "360p"],
             "13" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
-            "14" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
-            "15" : ["slp", 10, "Video load"]
+            "14" : ["adb", "settings put system user_rotation 1", "Landscape mode"]
         },
         "interaction" : {}
     },
@@ -102,7 +101,7 @@
             "3" : ["adb", "input tap 235 335", "movie"],
             "4" : ["adb", "input tap 600 180", "Search"],
             "5" : ["adb", "input tap 350 245", "Focus search"],
-            "6" : ["adb", "input text \"Orient\"", "Video name"],
+            "6" : ["adb", "input text \"Orient express\"", "Video name"],
             "7" : ["adb", "input tap 655 1210", "Go"],
             "8" : ["slp", 5, "Page load"],
             "9" : ["adb", "input tap 140 740", "Click video"],
@@ -128,8 +127,7 @@
             "11" : ["adb", "input tap 460 435", "Wake up"],
             "12" : ["adb", "input tap 665 685", "Fullscreen"],
             "13" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
-            "14" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
-            "15" : ["slp", 3, "Ready"]
+            "14" : ["adb", "settings put system user_rotation 1", "Landscape mode"]
         },
         "interaction" : {}
     },
@@ -151,8 +149,7 @@
             "13" : ["adb", "input tap 310 590", "Skip intro"],
             "14" : ["adb", "input tap 595 545", "Full screen"],
             "15" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
-            "16" : ["adb", "settings put system user_rotation 1", "Landscape mode"],
-            "17" : ["slp", 5, "Ready"]
+            "16" : ["adb", "settings put system user_rotation 1", "Landscape mode"]
         },
         "interaction" : {}
 
@@ -182,7 +179,7 @@
             "8" : ["slp", 5, "Page load"],
             "9" : ["adb", "input tap 150 650", "Click video"],
             "10" : ["adb", "input tap 540 1035", "Chrome"],
-            "11" : ["slp", 5, "Page load"],
+            "11" : ["slp", 20, "Page load"],
             "12" : ["adb", "input tap 660 445", "Play video"],
             "13" : ["slp", 20, "Adds"],
             "14" : ["adb", "input tap 535 350", "Wake up"],
@@ -207,11 +204,43 @@
             "12" : ["slp", 15, "Privacy pop-up"],
             "13" : ["adb", "input tap 370 1225", "Close app request"],
             "14" : ["adb", "input tap 475 1245", "I do not agree"],
-            "15" : ["slp", 10, "Video load"],
+            "15" : ["slp", 30, "Video load"],
             "16" : ["adb", "input tap 540 570", "Wake up"],
             "17" : ["adb", "input tap 645 1215", "Fullscreen"],
             "18" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
             "19" : ["adb", "settings put system user_rotation 1", "Landscape mode"]
+        },
+        "interaction" : {}
+    },
+    "https://www.bfmtv.com": {
+        "after_launch" : {
+            "1" : ["slp", 10, "Page load"],
+            "2" : ["adb", "input tap 375 920", "Agree and close"],
+            "3" : ["adb", "input tap 60 340", "Options"],
+            "4" : ["adb", "input swipe 430 1150 430 50", "Options"],
+            "5" : ["adb", "input tap 430 595", "Videos"],
+            "6" : ["adb", "input tap 360 700", "Click first"],
+            "7" : ["slp", 20, "Page load"],
+            "8" : ["adb", "input tap 550 330", "Wake"],
+            "9" : ["adb", "input tap 665 610", "Fullscreen"],
+            "10" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
+            "11" : ["adb", "settings put system user_rotation 1", "Landscape mode"]
+        },
+        "interaction" : {}
+    },
+    "https://www.nos.nl": {
+        "after_launch" : {
+            "1" : ["slp", 10, "Page load"],
+            "2" : ["adb", "input tap 360 200", "Sport"],
+            "3" : ["adb", "input tap 440 370", "Video"],
+            "4" : ["slp", 5, "Page load"],
+            "5" : ["adb", "input tap 625 580", "First video"],
+            "6" : ["adb", "input tap 365 465", "Play"],
+            "7" : ["adb", "input tap 560 360", "Wake up"],
+            "8" : ["adb", "input tap 685 635", "Fulscreen"],
+            "9" : ["adb", "settings put system accelerometer_rotation 0", "Landscape mode"],
+            "10" : ["adb", "settings put system user_rotation 1", "Landscape mode"]
+
         },
         "interaction" : {}
     }
