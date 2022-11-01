@@ -1,0 +1,53 @@
+{
+  "type": "web",
+  "devices": {
+    "j7duo2": {}
+  },
+  "repetitions": 5,
+  "duration": 30000,
+  "browsers": ["chrome"],
+  "monkeyrunner_path": "/usr/bin/monkeyrunner", 
+  "monkey_playback_path": "/usr/lib/android-sdk/tools/swt/monkeyrunner/scripts/monkey_playback.py", 
+  "systrace_path": "/usr/lib/android-sdk/platform-tools/systrace/systrace.py",
+  "powerprofile_path": "/home/pi/.local/share/apktool/framework/framework-res/res/xml/power_profile.xml",
+  "randomization": true,
+  "paths": [
+    "https://www.youtube.com",
+    "https://www.dailymotion.com",
+    "https://www.vimeo.com/watch",
+    "https://www.crunchyroll.com",
+    "https://sp.nicovideo.jp",
+    "https://www.imdb.com",
+    "https://www.ted.com",
+    "https://www.plex.tv",
+    "https://www.bfmtv.com",
+    "https://www.nos.nl"
+
+  ],
+  "profilers": {
+    "batterystats": {
+      "cleanup": true,
+      "python2_path": "/home/pi/.pyenv/versions/systrace/bin/python2.7" 
+    }
+  },
+  "scripts": {
+    "before_experiment": "ScriptsWeb/1_before_experiment.py",
+    "before_run": "ScriptsWeb/2_before_run.py",
+    "after_launch": [
+      {
+        "type": "python3",
+        "path": "ScriptsWeb/3_after_launch.py"
+      }
+    ],
+    "interaction": [
+      {
+        "type": "python3",
+        "path": "ScriptsWeb/4_interaction.py"
+      }
+    ],
+    "before_close": "ScriptsWeb/5_before_close.py",
+    "after_run": "ScriptsWeb/6_after_run.py",
+    "after_experiment": "ScriptsWeb/7_after_experiment.py"
+  },
+  "time_between_run": 120000
+}

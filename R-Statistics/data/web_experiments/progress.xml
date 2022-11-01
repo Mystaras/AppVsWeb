@@ -1,0 +1,308 @@
+<experiment>
+  <configHash>b812f2edc0cb97a5ff9a1301ae131131</configHash>
+  <outputDir>/home/pi/AppVsWeb/examples/appVSweb/output/2022.10.30_115429/</outputDir>
+  <runsToRun>
+    </runsToRun>
+  <runsDone>
+    <run runId="20">
+      <device>j7duo2</device>
+      <path>https://sp.nicovideo.jp</path>
+      <browser>chrome</browser>
+      <runCount>1</runCount>
+    </run>
+    <run runId="2">
+      <device>j7duo2</device>
+      <path>https://www.youtube.com</path>
+      <browser>chrome</browser>
+      <runCount>3</runCount>
+    </run>
+    <run runId="0">
+      <device>j7duo2</device>
+      <path>https://www.youtube.com</path>
+      <browser>chrome</browser>
+      <runCount>1</runCount>
+    </run>
+    <run runId="10">
+      <device>j7duo2</device>
+      <path>https://www.vimeo.com/watch</path>
+      <browser>chrome</browser>
+      <runCount>1</runCount>
+    </run>
+    <run runId="26">
+      <device>j7duo2</device>
+      <path>https://www.imdb.com</path>
+      <browser>chrome</browser>
+      <runCount>2</runCount>
+    </run>
+    <run runId="21">
+      <device>j7duo2</device>
+      <path>https://sp.nicovideo.jp</path>
+      <browser>chrome</browser>
+      <runCount>2</runCount>
+    </run>
+    <run runId="28">
+      <device>j7duo2</device>
+      <path>https://www.imdb.com</path>
+      <browser>chrome</browser>
+      <runCount>4</runCount>
+    </run>
+    <run runId="9">
+      <device>j7duo2</device>
+      <path>https://www.dailymotion.com</path>
+      <browser>chrome</browser>
+      <runCount>5</runCount>
+    </run>
+  <run runId="19">
+      <device>j7duo2</device>
+      <path>https://www.crunchyroll.com</path>
+      <browser>chrome</browser>
+      <runCount>5</runCount>
+    </run>
+    <run runId="17">
+      <device>j7duo2</device>
+      <path>https://www.crunchyroll.com</path>
+      <browser>chrome</browser>
+      <runCount>3</runCount>
+    </run>
+    <run runId="39">
+      <device>j7duo2</device>
+      <path>https://www.plex.tv</path>
+      <browser>chrome</browser>
+      <runCount>5</runCount>
+    </run>
+    <run runId="32">
+      <device>j7duo2</device>
+      <path>https://www.ted.com</path>
+      <browser>chrome</browser>
+      <runCount>3</runCount>
+    </run>
+    <run runId="27">
+      <device>j7duo2</device>
+      <path>https://www.imdb.com</path>
+      <browser>chrome</browser>
+      <runCount>3</runCount>
+    </run>
+    <run runId="37">
+      <device>j7duo2</device>
+      <path>https://www.plex.tv</path>
+      <browser>chrome</browser>
+      <runCount>3</runCount>
+    </run>
+    <run runId="24">
+      <device>j7duo2</device>
+      <path>https://sp.nicovideo.jp</path>
+      <browser>chrome</browser>
+      <runCount>5</runCount>
+    </run>
+    <run runId="46">
+      <device>j7duo2</device>
+      <path>https://www.nos.nl</path>
+      <browser>chrome</browser>
+      <runCount>2</runCount>
+    </run>
+    <run runId="18">
+      <device>j7duo2</device>
+      <path>https://www.crunchyroll.com</path>
+      <browser>chrome</browser>
+      <runCount>4</runCount>
+    </run>
+    <run runId="1">
+      <device>j7duo2</device>
+      <path>https://www.youtube.com</path>
+      <browser>chrome</browser>
+      <runCount>2</runCount>
+    </run>
+    <run runId="33">
+      <device>j7duo2</device>
+      <path>https://www.ted.com</path>
+      <browser>chrome</browser>
+      <runCount>4</runCount>
+    </run>
+    <run runId="34">
+      <device>j7duo2</device>
+      <path>https://www.ted.com</path>
+      <browser>chrome</browser>
+      <runCount>5</runCount>
+    </run>
+    <run runId="41">
+      <device>j7duo2</device>
+      <path>https://www.bfmtv.com</path>
+      <browser>chrome</browser>
+      <runCount>2</runCount>
+    </run>
+    <run runId="30">
+      <device>j7duo2</device>
+      <path>https://www.ted.com</path>
+      <browser>chrome</browser>
+      <runCount>1</runCount>
+    </run>
+    <run runId="48">
+      <device>j7duo2</device>
+      <path>https://www.nos.nl</path>
+      <browser>chrome</browser>
+      <runCount>4</runCount>
+    </run>
+    <run runId="22">
+      <device>j7duo2</device>
+      <path>https://sp.nicovideo.jp</path>
+      <browser>chrome</browser>
+      <runCount>3</runCount>
+    </run>
+    <run runId="36">
+      <device>j7duo2</device>
+      <path>https://www.plex.tv</path>
+      <browser>chrome</browser>
+      <runCount>2</runCount>
+    </run>
+    <run runId="5">
+      <device>j7duo2</device>
+      <path>https://www.dailymotion.com</path>
+      <browser>chrome</browser>
+      <runCount>1</runCount>
+    </run>
+    <run runId="7">
+      <device>j7duo2</device>
+      <path>https://www.dailymotion.com</path>
+      <browser>chrome</browser>
+      <runCount>3</runCount>
+    </run>
+    <run runId="49">
+      <device>j7duo2</device>
+      <path>https://www.nos.nl</path>
+      <browser>chrome</browser>
+      <runCount>5</runCount>
+    </run>
+  <run runId="15">
+      <device>j7duo2</device>
+      <path>https://www.crunchyroll.com</path>
+      <browser>chrome</browser>
+      <runCount>1</runCount>
+    </run>
+    <run runId="40">
+      <device>j7duo2</device>
+      <path>https://www.bfmtv.com</path>
+      <browser>chrome</browser>
+      <runCount>1</runCount>
+    </run>
+    <run runId="35">
+      <device>j7duo2</device>
+      <path>https://www.plex.tv</path>
+      <browser>chrome</browser>
+      <runCount>1</runCount>
+    </run>
+    <run runId="8">
+      <device>j7duo2</device>
+      <path>https://www.dailymotion.com</path>
+      <browser>chrome</browser>
+      <runCount>4</runCount>
+    </run>
+    <run runId="6">
+      <device>j7duo2</device>
+      <path>https://www.dailymotion.com</path>
+      <browser>chrome</browser>
+      <runCount>2</runCount>
+    </run>
+    <run runId="31">
+      <device>j7duo2</device>
+      <path>https://www.ted.com</path>
+      <browser>chrome</browser>
+      <runCount>2</runCount>
+    </run>
+    <run runId="12">
+      <device>j7duo2</device>
+      <path>https://www.vimeo.com/watch</path>
+      <browser>chrome</browser>
+      <runCount>3</runCount>
+    </run>
+    <run runId="23">
+      <device>j7duo2</device>
+      <path>https://sp.nicovideo.jp</path>
+      <browser>chrome</browser>
+      <runCount>4</runCount>
+    </run>
+    <run runId="3">
+      <device>j7duo2</device>
+      <path>https://www.youtube.com</path>
+      <browser>chrome</browser>
+      <runCount>4</runCount>
+    </run>
+    <run runId="47">
+      <device>j7duo2</device>
+      <path>https://www.nos.nl</path>
+      <browser>chrome</browser>
+      <runCount>3</runCount>
+    </run>
+    <run runId="11">
+      <device>j7duo2</device>
+      <path>https://www.vimeo.com/watch</path>
+      <browser>chrome</browser>
+      <runCount>2</runCount>
+    </run>
+    <run runId="38">
+      <device>j7duo2</device>
+      <path>https://www.plex.tv</path>
+      <browser>chrome</browser>
+      <runCount>4</runCount>
+    </run>
+    <run runId="43">
+      <device>j7duo2</device>
+      <path>https://www.bfmtv.com</path>
+      <browser>chrome</browser>
+      <runCount>4</runCount>
+    </run>
+    <run runId="42">
+      <device>j7duo2</device>
+      <path>https://www.bfmtv.com</path>
+      <browser>chrome</browser>
+      <runCount>3</runCount>
+    </run>
+    <run runId="29">
+      <device>j7duo2</device>
+      <path>https://www.imdb.com</path>
+      <browser>chrome</browser>
+      <runCount>5</runCount>
+    </run>
+    <run runId="14">
+      <device>j7duo2</device>
+      <path>https://www.vimeo.com/watch</path>
+      <browser>chrome</browser>
+      <runCount>5</runCount>
+    </run>
+    <run runId="25">
+      <device>j7duo2</device>
+      <path>https://www.imdb.com</path>
+      <browser>chrome</browser>
+      <runCount>1</runCount>
+    </run>
+    <run runId="44">
+      <device>j7duo2</device>
+      <path>https://www.bfmtv.com</path>
+      <browser>chrome</browser>
+      <runCount>5</runCount>
+    </run>
+    <run runId="4">
+      <device>j7duo2</device>
+      <path>https://www.youtube.com</path>
+      <browser>chrome</browser>
+      <runCount>5</runCount>
+    </run>
+    <run runId="45">
+      <device>j7duo2</device>
+      <path>https://www.nos.nl</path>
+      <browser>chrome</browser>
+      <runCount>1</runCount>
+    </run>
+    <run runId="13">
+      <device>j7duo2</device>
+      <path>https://www.vimeo.com/watch</path>
+      <browser>chrome</browser>
+      <runCount>4</runCount>
+    </run>
+    <run runId="16">
+      <device>j7duo2</device>
+      <path>https://www.crunchyroll.com</path>
+      <browser>chrome</browser>
+      <runCount>2</runCount>
+    </run>
+    </runsDone>
+</experiment>
