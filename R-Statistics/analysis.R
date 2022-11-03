@@ -165,16 +165,37 @@ df_adaptive <- rbind(df_adaptive_native, df_adaptive_web)
 df_360p_means = df_360p %>%
   group_by(subject, version) %>%
   summarize(
-    meanJ = mean(batterystats_Joule_calculated,
+    batterystats_Joule_calculated = mean(batterystats_Joule_calculated,
                  version = version,
     ))
 
 df_adaptive_means = df_adaptive %>%
   group_by(subject, version) %>%
   summarize(
-    meanJ = mean(batterystats_Joule_calculated,
+    batterystats_Joule_calculated = mean(batterystats_Joule_calculated,
     version = version,
   ))
+
+# Descriptive statistics
+descriptive_stats_version <- function(df) {
+  print(
+    df %>% group_by(version) %>%
+      summarize(
+        min = min(batterystats_Joule_calculated),
+        max = max(batterystats_Joule_calculated),
+        mean_cons = mean(batterystats_Joule_calculated),
+        sd_cons = sd(batterystats_Joule_calculated),
+        cv = sd(batterystats_Joule_calculated) / mean(batterystats_Joule_calculated) * 100,
+        sk = skewness(batterystats_Joule_calculated),
+        Q1 = quantile(batterystats_Joule_calculated, 0.25),
+        Q2 = quantile(batterystats_Joule_calculated, 0.50),
+        Q3 = quantile(batterystats_Joule_calculated, 0.75),
+      )
+  )
+}
+descriptive_stats_version(df_360p_means)
+descriptive_stats_version(df_adaptive_means)
+
 
 check_normality <- function(data) {
   par(mfrow=c(1,2))
@@ -184,17 +205,45 @@ check_normality <- function(data) {
   par(mfrow=c(1,1))
 }
 
+df_360p_means = df_360p_means %>% 
+  mutate_at(c('version'), as.factor)
 
-check_normality(df_360p_means$meanJ[df_360p_means$version=='native'])
-check_normality(df_360p_means$meanJ[df_360p_means$version=='web'])
+df_adaptive_means = df_adaptive_means %>% 
+  mutate_at(c('version'), as.factor)
 
-check_normality(df_adaptive_means$meanJ[df_adaptive_means$version=='native'])
-check_normality(df_adaptive_means$meanJ[df_adaptive_means$version=='web'])
+check_normality(df_360p_means$batterystats_Joule_calculated[df_360p_means$version=='native'])
+check_normality(df_360p_means$batterystats_Joule_calculated[df_360p_means$version=='web'])
 
+check_normality(df_adaptive_means$batterystats_Joule_calculated[df_adaptive_means$version=='native'])
+check_normality(df_adaptive_means$batterystats_Joule_calculated[df_adaptive_means$version=='web'])
 
 # Histograms of means
-boxplot(meanJ~version, df_360p_means, ylim = c(0,4000))
-boxplot(meanJ~version, df_adaptive_means, ylim = c(0,4000))
+library(tidyverse)
+bp_360p <- ggplot(df_360p_means, aes(x=version, y=batterystats_Joule_calculated, fill=version))+
+  xlab("Version") + ylab("Energy consumed in Joules") +
+  ylim(c(0, 5000)) +
+  geom_violin(trim=TRUE, alpha=0.5) +
+  geom_boxplot(fill='white', width=.2, outlier.size=.5) +
+  geom_jitter(width=0.2) +
+  stat_summary(fun=mean, color='black', geom='point', shape=5, size=1.5)+
+  theme(legend.position='none')
+bp_360p
+ggsave("boxplot_360p.png", width=20, height=16, units=c("cm"), dpi=300)
+
+bp_adaptive <- ggplot(df_adaptive_means, aes(x=version, y=batterystats_Joule_calculated, fill=version))+
+  xlab("Version") + ylab("Energy consumed in Joules") +
+  ylim(c(0, 5000)) +
+  geom_violin(trim=TRUE, alpha=0.5) +
+  geom_boxplot(fill='white', width=.2, outlier.size=.5) +
+  geom_jitter(width=0.2) +
+  stat_summary(fun=mean, color='black', geom='point', shape=5, size=1.5)+
+  theme(legend.position='none')
+bp_adaptive
+
+ggsave("boxplot_adaptive.png", width=20, height=16, units=c("cm"), dpi=300)
+
+boxplot(batterystats_Joule_calculated~version, df_360p_means, ylim = c(0,4000))
+boxplot(batterystats_Joule_calculated~version, df_adaptive_means, ylim = c(0,4000))
 
 # Statistical test
 
@@ -202,9 +251,9 @@ distance <-function(df1, df2){
   d=c()
   for (val in 1:nrow(df1)){
     s1 = df1$subject[val]
-    x = df1$meanJ[val]
+    x = df1$batterystats_Joule_calculated[val]
     s2 = df2$subject[val]
-    y = df2$meanJ[val]
+    y = df2$batterystats_Joule_calculated[val]
     assertthat::are_equal(s1,s2)
     d=append(d,x-y)
   }
@@ -218,8 +267,8 @@ distance_vect_adaptive = distance(df_adaptive_means[df_adaptive_means$version=='
 wilcox.test(x=distance_vect_360p, alternative="two.sided", mu=0)
 wilcox.test(x=distance_vect_adaptive, alternative="two.sided", mu=0)
 
-wilcox.test(meanJ~version, data=df_360p_means, mu=0, paired=TRUE)
-wilcox.test(meanJ~version, data=df_adaptive_means,mu=0, paired=TRUE)
+wilcox.test(batterystats_Joule_calculated~version, data=df_360p_means, mu=0, paired=TRUE)
+wilcox.test(batterystats_Joule_calculated~version, data=df_adaptive_means,mu=0, paired=TRUE)
 
-wilcox.test(df_360p_means$meanJ[df_360p_means$version=='native'], df_360p_means$meanJ[df_360p_means$version=='web'], paired=TRUE)
-wilcox.test(df_adaptive_means$meanJ[df_adaptive_means$version=='native'], df_adaptive_means$meanJ[df_adaptive_means$version=='web'], paired=TRUE)
+wilcox.test(df_360p_means$batterystats_Joule_calculated[df_360p_means$version=='native'], df_360p_means$batterystats_Joule_calculated[df_360p_means$version=='web'], paired=TRUE)
+wilcox.test(df_adaptive_means$batterystats_Joule_calculated[df_adaptive_means$version=='native'], df_adaptive_means$batterystats_Joule_calculated[df_adaptive_means$version=='web'], paired=TRUE)
