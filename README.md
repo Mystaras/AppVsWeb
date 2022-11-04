@@ -24,7 +24,7 @@ The device used for this experiment is a Samsung Galaxy J7 Duo. Detailed informa
 
 To connect the device to the raspberry Pi:
 ```console
-$ adb devices # Verify that the device is present (should be lugged in to the Pi)
+$ adb devices # Verify that the device is present (should be plugged-in to the Pi)
 $ adb tcpip 5555 # Restart the adb server on port 5555
 $ adb shell "ip addr show wlan0 | grep -e wlan0$ | cut -d\" \" -f 6 | cut -d/ -f 1" # Show the mobile device IP
 $ adb connect <ip>:5555 # Connect to the Android device where <ip> is the ip found in the previous command
